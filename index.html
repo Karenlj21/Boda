@@ -135,8 +135,26 @@
       border:2px solid #fff;
       box-shadow:0 4px 15px rgba(0,0,0,0.1);
     }
+    .flor {
+      position: fixed;
+      width: 180px;
+      z-index: -1;
+      opacity: 0.8;
+      pointer-events: none;
+    }
+    .arriba {
+      top: 0;
+      left: 0;
+    }
+    .abajo {
+      bottom: 0;
+      right: 0;
+      transform: rotate(180deg);
+    }
   </style>
 </head>
+<img src="florarriba.jpg" alt="" class="flor arriba">
+<img src="florabajo.jpg" alt="" class="flor abajo">
 <body>
 
   <div class="container">
@@ -308,6 +326,7 @@
 
 </body>
 </html>
+
 
 
 
