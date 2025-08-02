@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Mateo & Pamela - Nuestra Boda</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --bg:#f5f3ef;
+      --text:#1f1e1c;
+      --accent1:#e8a0a0; /* rosa suave */
+      --accent2:#7a8b6f; /* verde oliva */
+      --accent3:#c3b0e0; /* lavanda */
+      --accent4:#f2c94c; /* mostaza claro */
+      --radius:16px;
+      --shadow:0 10px 30px rgba(31,30,28,0.08);
+      --font-sans: "Helvetica Neue", system-ui, -apple-system, sans-serif;
+      --font-hand: "Segoe Script", "Pacifico", cursive;
+    }
+    *{box-sizing:border-box;}
+    body{
+      margin:0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-sans);
+      line-height:1.5;
+      scroll-behavior:smooth;
+    }
+    a{color: var(--accent2); text-decoration:none;}
+    .container{
+      max-width:1024px;
+      margin:0 auto;
+      padding:1rem 1.25rem;
+    }
+    header{
+      text-align:center;
+      padding:2rem 0 1rem;
+      position:relative;
+    }
+    .names{
+      font-family: var(--font-hand);
+      font-size:2.5rem;
+      margin:0;
+      line-height:1.1;
+    }
+    .subtitle{
+      margin-top:0.25rem;
+      font-size:0.9rem;
+      letter-spacing:1px;
+      text-transform:uppercase;
+      color:#555;
+    }
+    .section{
+      padding:3rem 0;
+      position:relative;
+    }
+    .card{
+      background:white;
+      border-radius: var(--radius);
+      padding:1.75rem;
+      box-shadow: var(--shadow);
+      margin-bottom:1.75rem;
+    }
+    .btn{
+      display:inline-block;
+      padding:0.85rem 1.5rem;
+      border-radius:999px;
+      background: var(--accent2);
+      color:white;
+      text-transform:uppercase;
+      font-size:0.75rem;
+      letter-spacing:1px;
+      font-weight:600;
+      cursor:pointer;
+    }
+    .grid{
+      display:grid;
+      gap:1.5rem;
+    }
+    .two{
+      grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+    }
+    .rsvp input, .rsvp textarea{
+      width:100%;
+      padding:0.75rem;
+      margin-top:0.5rem;
+      border:1px solid #ddd;
+      border-radius:8px;
+      font-size:0.9rem;
+      font-family: inherit;
+    }
+    .rsvp label{
+      font-weight:600;
+      display:block;
+      margin-top:1rem;
+    }
+    .gallery{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+    }
+    .gallery img{
+      width:calc(33% - 10px);
+      border-radius:12px;
+      object-fit:cover;
+      aspect-ratio:4/3;
+    }
+    @media (max-width:800px){
+      .names{font-size:2rem;}
+      .gallery img{width:100%;}
+    }
+    .floral-corner{
+      position:absolute;
+      pointer-events:none;
+      transition:opacity .3s;
+    }
+    .footer{
+      text-align:center;
+      font-size:0.75rem;
+      color:#666;
+      padding:2rem 0;
+    }
+    .highlight{
+      color: var(--accent1);
+    }
+    .dress-code-palette{
+      display:flex;
+      gap:10px;
+      margin-top:0.5rem;
+    }
+    .swatch{
+      width:32px;
+      height:32px;
+      border-radius:50%;
+      border:2px solid #fff;
+      box-shadow:0 4px 15px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- Inicio -->
+    <header id="inicio">
+      <div style="position:absolute; top:0; right:0; max-width:220px;">
+        <!-- puedes poner aquí un detalle floral como imagen de esquina -->
+        <img src="https://via.placeholder.com/220x220?text=Flor" alt="" style="width:100%; border-radius:16px; object-fit:cover;">
+      </div>
+      <p class="subtitle">Con la bendición de Dios y de nuestros padres</p>
+      <h1 class="names">Mateo <span style="display:block;">y Pamela</span></h1>
+      <p style="margin:0.5rem 0 1rem;">Tenemos el honor de invitarte a nuestra boda</p>
+      <div class="card" style="max-width:600px; margin:1rem auto;">
+        <div class="grid two">
+          <div>
+            <h3 style="margin-top:0;">¿Cuándo?</h3>
+            <p><strong>Sábado, 20 de diciembre de 2025</strong><br>3:00 pm</p>
+          </div>
+          <div>
+            <h3 style="margin-top:0;">¿Dónde?</h3>
+            <p><strong>Loma del Chocho, Envigado</strong><br>(Ceremonia y recepción en el mismo lugar)</p>
+          </div>
+        </div>
+        <div style="text-align:center; margin-top:1rem;">
+          <a href="#rsvp" class="btn">Confirmar asistencia</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Historia -->
+    <section class="section" id="historia">
+      <div class="container">
+        <h2 style="text-align:center; margin-bottom:0.5rem;">Nuestra Historia</h2>
+        <p style="text-align:center; color:#555; margin-top:0;">Cómo se conocieron, qué los unió y por qué este día significa tanto.</p>
+        <div class="card">
+          <p>
+            Aquí puedes escribir una versión breve y emotiva de la historia de Mateo y Pamela:
+            <br><em>Ejemplo:</em> "Desde ese primer café en el que se rieron sin parar, supieron que había algo especial. Entre viajes, risas y desafíos, construyeron un amor basado en respeto, complicidad y fe. Hoy, queremos celebrar con ustedes la promesa de seguir caminando juntos."
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Detalles -->
+    <section class="section" id="detalles" style="background:#fff;">
+      <div class="container">
+        <h2 style="text-align:center; margin-bottom:0.5rem;">Detalles del Evento</h2>
+        <div class="grid two">
+          <div class="card">
+            <h3>Fecha y hora</h3>
+            <p><strong>20 de diciembre de 2025</strong><br>3:00 pm</p>
+          </div>
+          <div class="card">
+            <h3>Lugar</h3>
+            <p><strong>Loma del Chocho, Envigado</strong><br>Ceremonia y recepción en el mismo sitio.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Código de vestimenta -->
+    <section class="section" id="vestimenta">
+      <div class="container">
+        <h2 style="text-align:center; margin-bottom:0.5rem;">Código de Vestimenta</h2>
+        <div class="card">
+          <p>Elegante campestre. Se reserva el blanco y sus tonalidades para la novia.</p>
+          <div class="grid two" style="align-items:start;">
+            <div>
+              <h4>Caballero</h4>
+              <p>Traje oscuro, corbata opcional. Tonalidades sugeridas:</p>
+              <div class="dress-code-palette">
+                <div class="swatch" style="background:#2f3e46;"></div>
+                <div class="swatch" style="background:#556b2f;"></div>
+                <div class="swatch" style="background:#4b3f72;"></div>
+              </div>
+            </div>
+            <div>
+              <h4>Dama</h4>
+              <p>Vestido elegante con acentos suaves. Tonalidades sugeridas:</p>
+              <div class="dress-code-palette">
+                <div class="swatch" style="background:#e8a0a0;"></div>
+                <div class="swatch" style="background:#c3b0e0;"></div>
+                <div class="swatch" style="background:#f2c94c;"></div>
+                <div class="swatch" style="background:#7a8b6f;"></div>
+              </div>
+              <p style="font-size:0.8em; margin-top:0.5rem;">La novia llevará blanco y sus tonos.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RSVP -->
+    <section class="section" id="rsvp">
+      <div class="container">
+        <h2 style="text-align:center; margin-bottom:0.5rem;">Confirmación de asistencia</h2>
+        <div class="card" style="max-width:700px; margin:0 auto;">
+          <p>Por favor confirma tu asistencia antes del 1 de diciembre.</p>
+          <!-- Ejemplo usando Formspree: reemplaza el action con tu endpoint real -->
+          <form class="rsvp" action="https://formspree.io/f/your-form-id" method="POST">
+            <div class="grid two">
+              <div>
+                <label for="nombre">Nombre completo</label>
+                <input type="text" id="nombre" name="Nombre" required placeholder="Ej: Ana Pérez">
+              </div>
+              <div>
+                <label for="invitados">¿Asistirás con acompañante?</label>
+                <input type="text" id="invitados" name="Acompañante" placeholder="Nombre del acompañante (opcional)">
+              </div>
+            </div>
+            <label for="mensaje">Mensaje / Agradecimiento</label>
+            <textarea id="mensaje" name="Mensaje" rows="3" placeholder="Un comentario para los novios (opcional)"></textarea>
+            <div style="text-align:center; margin-top:1rem;">
+              <button type="submit" class="btn">Enviar confirmación</button>
+            </div>
+          </form>
+          <p style="font-size:0.75rem; margin-top:0.5rem;">Si prefieres, puedes escribirnos directamente al WhatsApp: <strong>+57 300 000 0000</strong></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Galería -->
+    <section class="section" id="galeria">
+      <div class="container">
+        <h2 style="text-align:center; margin-bottom:0.5rem;">Galería</h2>
+        <p style="text-align:center; color:#555; margin-top:0;">Fotos de su historia juntos y momentos especiales.</p>
+        <div class="gallery">
+          <!-- Reemplaza src con imágenes reales -->
+          <img src="https://via.placeholder.com/400x300?text=Foto+1" alt="Foto 1">
+          <img src="https://via.placeholder.com/400x300?text=Foto+2" alt="Foto 2">
+          <img src="https://via.placeholder.com/400x300?text=Foto+3" alt="Foto 3">
+        </div>
+      </div>
+    </section>
+
+    <!-- Lluvia de sobres -->
+    <section class="section" id="sobres" style="background:#fff;">
+      <div class="container">
+        <h2 style="text-align:center; margin-bottom:0.5rem;">Lluvia de sobres</h2>
+        <div class="card">
+          <p>Tu presencia es el mejor regalo. Si deseas apoyarnos con un detalle, te compartimos algunas opciones:</p>
+          <ul>
+            <li>Transferencia a la cuenta: <strong>Bancolombia</strong> a nombre de Pamela Rodríguez, CC 1.234.567.890</li>
+            <li>Nequi: <strong>+57 300 123 4567</strong></li>
+            <li>En efectivo en el evento (habrá un buzón especial).</li>
+          </ul>
+          <p style="font-style:italic; font-size:0.9em;">(Puedes ajustar esto según cómo vayan a recibir los regalos.)</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Frase especial -->
+    <section class="section" id="frase">
+      <div class="container">
+        <h2 style="text-align:center; margin-bottom:0.5rem;">Una frase para el corazón</h2>
+        <div class="card" style="text-align:center;">
+          <p style="font-size:1.25rem; margin:0;">"El amor no se mira, se siente, y aún más cuando está compartido con quienes más queremos."</p>
+          <p style="margin-top:0.5rem; font-size:0.9rem;">— Mateo & Pamela</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pie -->
+    <div class="footer">
+      <p>Gracias por ser parte de este día tan especial. <br>Si tienes dudas, contáctanos: <a href="mailto:ejemplo@boda.com">ejemplo@boda.com</a></p>
+    </div>
+
+  </div>
+
+</body>
+</html>
